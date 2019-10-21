@@ -1,0 +1,13 @@
+@alfa int, @beta int, @ costo_a float, @costo_b float, @c_v_a int, @c_v_b int, @costo_unitario_c float,
+@precio float, @cant_vendida int, @max_ganancia float, @TIR float
+
+setTIR=0.12
+
+select @alfa =unidades @alfa, costo_unitario_c @costo_a,cant_vendida @c_v_a from ventas
+where tienda="A"
+select @beta =unidades @beta, costo_unitario_c @costo_b,cant_vendida @c_v_b from ventas
+where tienda="B"
+@costo_unitario_c=(alfa*costo_a)+(beta*costo_b)
+@precio=costo_unitario_c*(1+TIR)
+@cant_vendida=c_v_a+c_v_b
+@max_ganancia=(precio-costo_unitario_c)*cant_vendida
