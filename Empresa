@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<meta charset= "utf-8"/>
+<style>
+table,
+th,
+td{
+border:ipx solid black;
+border-collapse: collapse;
+}
+th,
+td{
+padding: 5px;
+}
+</style>
+</HEAD>
+<BODY>
+<div id="texto">
+<h1> Empresas </h1>
+<button id="cargar_catalogo">Cargar catálogo</button>
+</div>
+<table id="demo"></table>
+<script>
+document.getElementById("cargar_catalogo").addEventListener("click", cargarCatalogo);
+function cargarCatalogo(){
+ var xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function() {
+	if(this.readyState == 4 && this.status == 200){	
+		cargarXML(this);
+
+	}
+};
+
+xhr.open("GET","catalogo.xml", true);
+xhr.send();
+}
+function cargarXML(xml){
+
+	var docXML = xml.responseXML;
+	var tabla = "<tr><th>Materia</th><th>Boleta</th></tr>";
+	var empre = docXML.getElementsByTagName("catalogo");
+	for (var i = 0; i < empre.length; i++){
+
+		tabla += "<tr><td>";
+		tabla += empre[i].getElementsByTagName("materia")[0].textContent;
+		tabla += "</td><td>";
+		tabla += empre[i].getElementsByTagName("boleta")[0].textContent;
+		tabla += "</td></tr>";
+	}
+	document.getElementById("demo").innetHTML = tabla;
+}
+
+</script>
+</BODY>
+</HTML>
