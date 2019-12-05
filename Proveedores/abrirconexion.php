@@ -1,9 +1,9 @@
 <?php 
 	// Parametros a configurar para la conexion de la base de datos 
-	$host = "localhost";    // sera el valor de nuestra BD 
-	$basededatos = "polizona_mercado";    // sera el valor de nuestra BD 
-	$usuariodb = "Miguel";    // sera el valor de nuestra BD 
-	$clavedb = "12345";    // sera el valor de nuestra BD 
+	$host = "68.70.164.26";    // sera el valor de nuestra BD 
+	$basededatos = "polizona_in13";    // sera el valor de nuestra BD 
+	$usuariodb = "polizona_in13";    // sera el valor de nuestra BD 
+	$clavedb = "Siete*Dos=21";    // sera el valor de nuestra BD 
 
 	//Lista de Tablas
     $tabla_db1 = "embarques"; 	   // tabla de usuarios
