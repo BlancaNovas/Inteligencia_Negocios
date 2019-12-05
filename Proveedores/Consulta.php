@@ -8,6 +8,7 @@
         <title>Consulta de Proveedores</title>
     </head>
     <body>
+        <center>
         <h1>Consulta de Proveedores</h1>
         <form action="#" method="post">
         <p>Materia:
@@ -86,5 +87,6 @@
             }
 
     ?>
+            </center>
     </body>
 </html>
